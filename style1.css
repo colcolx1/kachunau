@@ -1,0 +1,171 @@
+/* Menu */
+.menu-wrap{
+  position: fixed;
+  top:0;
+  right:0;
+  z-index:10;
+}
+/* Checkbox */
+.menu-wrap .toggler{
+  position: fixed;
+  top:0.5rem;
+  right:1.5rem;
+  z-index:11;
+  cursor:pointer;
+  width:60px;
+  height:60px;
+  opacity:0;
+}
+/* Menu button */
+.menu-wrap .hamburger{
+  position: fixed;
+  top:0.5rem;
+  right:1.5em;
+  z-index:10;
+  width:60px;
+  height:60px;
+  padding: 1rem 0.9rem;
+  border-radius: 5px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  background-color: rgba(172, 164, 164, 0.6);
+}
+
+/* line */
+.menu-wrap .hamburger > div{
+  position: fixed;
+  width:100%;
+  height:3px;
+  background: #fff;
+  color:#fff;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after{
+content:'';
+position: relative;
+z-index: 10;
+top:-10px;
+width:100%;
+height:3px;
+background: inherit;
+}
+
+.menu-wrap .hamburger > div:after{
+  top:10px;
+}
+
+/* toggler */
+.menu-wrap .toggler:checked + .hamburger > div{
+  transform: rotate(135deg);
+}
+
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after{
+top:0;
+transform: rotate(90deg);
+}
+
+.menu-wrap .toggler:checked:hover + .hamburger > div{
+  transform:rotate(225deg);
+}
+
+.menu-wrap .menu{
+  position: fixed;
+  top:0;
+  right:0;
+  width:100%;
+  height:100%;
+visibility: hidden;
+  overflow: hidden;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-wrap .menu > div{
+  background-color:rgba(86, 86, 116, 0.85);
+
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex:none;
+  align-items: center;
+  justify-content: center;
+  opacity:0;
+  transition: all 1s ease;
+}
+
+.menu-wrap .menu > div > div{
+  text-align: center;
+  max-width: 90vw;
+  max-height:100vh;
+  transition: opacity 0.4s ease;
+   opacity:0;
+
+}
+.menu-wrap .menu > div > div >ul>h2{
+text-transform: uppercase;
+text-align: center;
+color:black;
+font-size: 3rem;
+border-bottom:5px solid black;
+padding:15px;
+letter-spacing:1px;
+margin-bottom:1rem;
+padding:0;
+}
+
+.menu-wrap .menu > div > div >ul>li{
+  list-style: none;
+  color:white;
+  font-size:1.5rem;
+  font-weight: 700;
+  padding:1rem 2rem;
+  margin:1rem;
+  border:4px solid rgb(155, 155, 195);
+  letter-spacing:.8px;
+  border-radius: 5px;
+  
+}
+.menu-wrap .menu > div > div >ul>li.current{
+  opacity: .2;
+  cursor:default;
+user-select: none;
+}
+
+.menu-wrap .menu > div > div >ul>li.current:hover{
+  background-color:rgba(0,0,0,0);
+ }
+ 
+ .menu-wrap .menu > div > div >ul>li>a{
+   color:inherit;
+   text-decoration: none;
+   transition: color 0.4s ease;
+ }
+ 
+ .menu-wrap .menu > div > div >ul>li:hover{
+ background-color:rgb(155, 155, 195);
+ }
+
+ /* click to show */
+.menu-wrap .toggler:checked ~ .menu{
+  visibility: visible;
+}
+.menu-wrap .toggler:checked ~ .menu>div{
+  opacity: 1;
+
+}
+
+.menu-wrap .toggler:checked ~ .menu>div>div{
+  opacity: 1;
+  
+  transition: all .4s ease;
+}
+
+/* menu end*/
